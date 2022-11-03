@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+
+        <title>KYLE COUNTER</title>
+        <link rel="icon" href="./kyle.ico" type="image/x-icon" />
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+        <div class="wholeThing", id="wholeThingID">
+            <header>
+                <div class="headerContainer">
+                    <div id="headerCenteredElement">
+                        <img id="kyleHeaderImage" src="Kyle.jpg" alt="CrustyKyle">
+                        <h1> Kyle Counter</h1> 
+                    </div>
+                    <div id="kyleHeaderSubtextContainer">
+                        <p id="kyleHeaderSubtext">What did Kyle Li do this time</p>
+                    </div>
+                </div> 
+            </header>
+    
+            <main>
+                <div class="buttonContainer">
+                    <div class="buttons">
+                        <button class="button" type="button"> Predicted what he was going to say</button>
+                        <button class="button" type="button"> Complaining about girls</button>
+                        <button class="button" type="button"> Roasted you for no reason</button>
+                        <button class="button" type="button"> You had a "did I ask" moment </button>
+                        <button class="button" type="button"> Said something that triggered you</button>
+                        <button class="button" type="button"> Complained about drinking </button>
+                        <button class="button" type="button"> "Mentee"</button>
+                        <button class="button" type="button"> "My friend" (obviously a female)</button>
+                        <button class="button" type="button"> "I'm busy"</button>
+                        <button class="button" type="button"> "We'll see" </button>
+                        <button class="button" type="button"> "We talk later tonight" </button>
+                        <button class="button" type="button"> "I have (hostpital shift or lab)" </button>
+                        <button class="button" type="button"> "I'm broke" </button>
+                        <button class="button" type="button"> Cringe Snapchat streak ("Im tired", "I hate lab", "Why did I do this to myself", etc.) </button>
+                    </div>
+                </div>
+        </div>
+
+        </main>
+        <!-- A button to open the popup form -->
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+        <!-- The form -->
+        <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="button" class="btn" onclick="showPage()"">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+        </div>
+
+    </body>
+</html>
