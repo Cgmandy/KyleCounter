@@ -19,7 +19,7 @@ var phrases = [
 ];
 
 function getData(){
-  fetch('https://104.172.46.211:5000/kyleGetAll')
+  fetch('http://104.172.46.211:5000/kyleGetAll')
   .then(response =>  response.json())
   .then(data => loadData(data['data']));
 }
@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
   for (var i = 0; i < buttonsCount; i += 1) {
     buttons[i].onclick = function(e) {
       
-    fetch('https://104.172.46.211:5000/kyleAddData', {
+    fetch('http://104.172.46.211:5000/kyleAddData', {
       headers: {
         'Content-type': 'application/json'
       },
