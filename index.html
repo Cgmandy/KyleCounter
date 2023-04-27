@@ -7,8 +7,10 @@
         <link rel="stylesheet" href="./style.css" />
 
         <title>KYLE COUNTER</title>
-        <link rel="icon" href="./kyle.ico" type="image/x-icon" />
+        <link rel="icon" href="./images/kyle.ico" type="image/x-icon" />
         <script src="index.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
     </head>
 
     <body>
@@ -16,7 +18,7 @@
             <header>
                 <div class="headerContainer">
                     <div id="headerCenteredElement">
-                        <img id="kyleHeaderImage" src="Kyle.jpg" alt="CrustyKyle">
+                        <img id="kyleHeaderImage" src="./images/Kyle.ico" alt="CrustyKyle">
                         <h1> Kyle Counter</h1> 
                     </div>
                     <div id="kyleHeaderSubtextContainer">
@@ -28,43 +30,45 @@
             <main>
                 <div class="buttonContainer">
                     <div class="buttons">
-                        <button class="button" type="button"> Predicted what he was going to say</button>
-                        <button class="button" type="button"> Complaining about girls</button>
-                        <button class="button" type="button"> Roasted you for no reason</button>
-                        <button class="button" type="button"> You had a "did I ask" moment </button>
-                        <button class="button" type="button"> Said something that triggered you</button>
-                        <button class="button" type="button"> Complained about drinking </button>
-                        <button class="button" type="button"> "Mentee"</button>
-                        <button class="button" type="button"> "My friend" (obviously a female)</button>
-                        <button class="button" type="button"> "I'm busy"</button>
-                        <button class="button" type="button"> "We'll see" </button>
-                        <button class="button" type="button"> "We talk later tonight" </button>
-                        <button class="button" type="button"> "I have (hostpital shift or lab)" </button>
-                        <button class="button" type="button"> "I'm broke" </button>
-                        <button class="button" type="button"> Cringe Snapchat streak ("Im tired", "I hate lab", "Why did I do this to myself", etc.) </button>
+                        <button id="1" class="button" > Predicted what he was going to say</button>
+                        <button id="2" class="button" > Roasted you for no reason</button>
+                        <button id="3" class="button" > Said something that triggered you</button>
+                        <button id="4" class="button" > "I'm too sober"</button>
+                        <button id="5" class="button" > "My friend" <br>(obviously a female)</button>
+                        <button id="6" class="button" > "We'll see" </button>
+                        <button id="7" class="button" > "We talk later tonight" </button>
+                        <button id="8" class="button" > "I'm broke" </button>
+                        <button id="9" class="button" > Ripped ass </button>
+                        <button id="10" class="button" > Pedo Laugh </button>
+                        <button id="11" class="button" > "Wait" </button>
+                        <button id="12" class="button" > "I didn't know, did you know" </button>
+                        <button id="12" class="button" > Fumbled a girl </button>
+                        <button id="13" class="button" > Mentioned something Tesla related </button>
+                        <button id="14" class="button" > "I can't believe" </button>
                     </div>
                 </div>
+            </main> 
         </div>
-
-        </main>
-        <!-- A button to open the popup form -->
-        <button class="open-button" onclick="openForm()">Open Form</button>
-
-        <!-- The form -->
-        <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
-
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="button" class="btn" onclick="showPage()"">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-        </div>
-
     </body>
+
+    <div id="container" ></div>
+    <script>
+        anychart.onDocumentReady(function() {
+        data = anychart.data.set([
+        ]);
+
+        chart = anychart.pie();
+
+        chart.title("Kyle Statistics");
+
+        chart.data(data);
+        chart.container('container');
+        chart.draw();
+
+        chart.legend().position("right");
+        chart.legend().itemsLayout("vertical");
+        chart.background().fill("black");
+        });
+    </script>
+
 </html>
