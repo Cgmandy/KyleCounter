@@ -33,6 +33,7 @@ function loadData(databaseData) {
   var x = 0;
   databaseData.forEach(function ({id, count}){
     data.append({x: phrases[x], value: count});
+    console.log(phrases[x]);
     x++;
   });
 
