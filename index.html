@@ -1,74 +1,105 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
 
-        <title>KYLE COUNTER</title>
-        <link rel="icon" href="./images/kyle.ico" type="image/x-icon" />
-        <script src="index.js"></script>
-        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
-        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
-    </head>
+    <title>KYLE COUNTER</title>
+    <link rel="icon" href="./images/kyle.ico" type="image/x-icon" />
+    <script src="index.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+  </head>
 
-    <body>
-        <div class="wholeThing", id="wholeThingID">
-            <header>
-                <div class="headerContainer">
-                    <div id="headerCenteredElement">
-                        <img id="kyleHeaderImage" src="./images/Kyle.ico" alt="CrustyKyle">
-                        <h1> Kyle Counter</h1> 
-                    </div>
-                    <div id="kyleHeaderSubtextContainer">
-                        <p id="kyleHeaderSubtext">What did Kyle Li do this time</p>
-                    </div>
-                </div> 
-            </header>
-    
-            <main>
-                <div class="buttonContainer">
-                    <div class="buttons">
-                        <button id="1" class="button" > Predicted what he was going to say</button>
-                        <button id="2" class="button" > Roasted you for no reason</button>
-                        <button id="3" class="button" > Said something that triggered you</button>
-                        <button id="4" class="button" > "I'm too sober"</button>
-                        <button id="5" class="button" > "My friend" <br>(obviously a female)</button>
-                        <button id="6" class="button" > "We'll see" </button>
-                        <button id="7" class="button" > "We talk later tonight" </button>
-                        <button id="8" class="button" > "I'm broke" </button>
-                        <button id="9" class="button" > Ripped ass </button>
-                        <button id="10" class="button" > Pedo Laugh </button>
-                        <button id="11" class="button" > "Wait" </button>
-                        <button id="12" class="button" > "I didn't know, did you know" </button>
-                        <button id="13" class="button" > Fumbled a girl </button>
-                        <button id="14" class="button" > Mentioned something Tesla related </button>
-                        <button id="15" class="button" > "I can't believe" </button>
-                    </div>
-                </div>
-            </main> 
+  <body>
+    <div class="wholeThing" , id="wholeThingID">
+      <header>
+        <div class="headerContainer">
+          <div id="headerCenteredElement">
+            <img id="kyleHeaderImage" src="./images/Kyle.ico" alt="CrustyKyle"/>
+            <h1>Kyle Counter</h1>
+          </div>
+          <div id="kyleHeaderSubtextContainer">
+            <p id="kyleHeaderSubtext">What did Kyle Li do this time</p>
+          </div>
         </div>
-    </body>
+      </header>
 
-    <div id="container" ></div>
-    <script>
-        anychart.onDocumentReady(function() {
-        data = anychart.data.set([
-        ]);
+      <main>
+        <div class="buttonContainer">
+          <div class="buttons">
+            <button id="1" class="button">Predicted what he was going to say</button>
+            <button id="2" class="button">Roasted you for no reason</button>
+            <button id="3" class="button">Said something that triggered you</button>
+            <button id="4" class="button">"I'm too sober"</button>
+            <button id="5" class="button">"My friend" <br />(obviously a female)</button>
+            <button id="6" class="button">"We'll see"</button>
+            <button id="7" class="button">"We talk later tonight"</button>
+            <button id="8" class="button">"I'm broke"</button>
+            <button id="9" class="button">Ripped ass</button>
+            <button id="10" class="button">Pedo Laugh</button>
+            <button id="11" class="button">"Wait"</button>
+            <button id="12" class="button">"I didn't know, did you know"</button>
+            <button id="13" class="button">Fumbled a girl</button>
+            <button id="14" class="button">Mentioned something Tesla related</button>
+            <button id="15" class="button">"I can't believe"</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 
-        chart = anychart.pie();
+  <div class="recentSubmission">
+    <h1>Kyle's 5 Most Recent Crimes</h1>
+    <table id="table">
+      <thead>
+        <th>Reason</th>
+        <th>Context</th>
+        <th>Date Added</th>
+        <th>Victim</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <a id="allCrimesLink" href="./subpages/crimesList.html">Click Here for All Crimes</a>
+  </div>
 
-        chart.title("Kyle Statistics");
+  <div id="graph"></div>
+  <script>
+    anychart.onDocumentReady(function () {
+      data = anychart.data.set([]);
 
-        chart.data(data);
-        chart.container('container');
-        chart.draw();
+      chart = anychart.pie();
 
-        chart.legend().position("right");
-        chart.legend().itemsLayout("vertical");
-        chart.background().fill("black");
-        });
-    </script>
+      chart.title("Kyle Statistics");
 
+      chart.data(data);
+      chart.container("graph");
+      chart.draw();
+
+      chart.legend().position("right");
+      chart.legend().itemsLayout("vertical");
+      chart.background().fill("black");
+    });
+  </script>
+
+  <div class="formDiv">
+    <div class="formPopup" id="popupForm">
+      <form id="dataForm" class="formContainer">
+        <h2 id="filInformationText">Fill Information</h2>
+
+        <input type="text" id="reasonIDInput" name="reasonID" style="display: none"/>
+
+        <label for="Context"><strong>What's the Context</strong></label>
+        <input type="text" id="contextInput" name="context" placeholder="Context"/>
+
+        <label for="Name"><strong>Your Name</strong></label>
+        <input type="text" id="nameInput" name="name" placeholder="Your Name"/>
+
+        <button type="submit" id="submitBtn" class="btn">Submit</button>
+        <button type="button" id="cancelButton" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+  </div>
 </html>
