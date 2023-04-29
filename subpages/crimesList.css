@@ -1,0 +1,40 @@
+html {
+    font-family: 'georgia';
+    background-color: black;
+    color: white;
+}
+
+#kyleHeaderImage {
+    max-height: 100%;
+    width: auto;
+    float: left;
+    padding-right: 2%;
+}
+
+.headerContainer {
+    position: relative;
+    height: auto;
+}
+
+#headerCenteredElement {
+    display: flex;
+    align-items: center;
+    height: 8vw;
+    font-size: 2.5vw;
+}
+
+table {
+    margin-top: 1vw;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid #ffffff;
+}
+
+th,
+td {
+    padding: 10px;
+}
