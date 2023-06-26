@@ -18,7 +18,8 @@ var phrases = [
   "I didn't know, did you know",
   "Fumbled a girl",
   "Mentioned something Tesla related",
-  "I can't believe"
+  "I can't believe",
+  "Something Lat related"
 ];
 
 function getKyleStatistics() {
