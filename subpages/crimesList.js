@@ -13,8 +13,13 @@ var phrases = [
     "I didn't know, did you know",
     "Fumbled a girl",
     "Mentioned something Tesla related",
-    "I can't believe"
+    "I can't / refuse to believe",
+    "Something Lat related"
   ];
+
+window.addEventListener('DOMContentLoaded', () => {
+    getAllKyleReasons();
+});
 
 function getAllKyleReasons() {
     fetch('http://104.172.46.211:5000/kyleGetAllReasons')
@@ -46,8 +51,3 @@ function loadHTMLTable(data) {
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    getAllKyleReasons();
-    
-  
-});
