@@ -2,6 +2,8 @@ var chart;
 var data;
 var formOpen;
 
+var URL = "http://104.172.46.211:5000"
+// var URL = "http://localhost:5000"
 
 var phrases = [
   "Predicted what he was going to say",
@@ -23,13 +25,13 @@ var phrases = [
 ];
 
 function getKyleStatistics() {
-  fetch('http://104.172.46.211:5000/kyleGetStatistics')
+  fetch(URL + '/kyleGetStatistics')
     .then(response => response.json())
     .then(data => loadData(data['data']));
 }
 
 function getKyleReasons() {
-  fetch('http://104.172.46.211:5000/kyleGetReasons')
+  fetch(URL + '/kyleGetReasons')
     .then(response => response.json())
     .then(data => loadHTMLTable(data['data']));
 }
@@ -74,14 +76,14 @@ window.addEventListener('DOMContentLoaded', () => {
     var formData = new FormData(document.querySelector("#dataForm"));
     var reasonIDData = formData.get("reasonID");
     var contextData = formData.get("context");
-    var nameData = formData.get("name");
+    var victimData = formData.get("victim");
 
-    fetch('http://104.172.46.211:5000/kyleAddData', {
+    fetch(URL + '/kyleAddData', {
       headers: {
         'Content-type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({reasonID: reasonIDData, context: contextData, name: nameData })
+      body: JSON.stringify({reasonID: reasonIDData, context: contextData, victim: victimData })
     })
       .then(response => response.json())
       .then(data => refreshPage());
