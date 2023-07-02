@@ -43,7 +43,6 @@ function editKyleReason(number, context, victim) {
 }
 
 function loadHTMLTable(data) {
-    console.log(data);
     const table = document.querySelector('table tbody');
   
     if (data.length === 0) {
