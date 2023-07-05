@@ -1,4 +1,4 @@
-var URL = "http://104.172.46.211:5000"
+var URL = "http://backend.hardwareabstraction.com"
 // var URL = "http://localhost:5000"
 
 var phrases = [
